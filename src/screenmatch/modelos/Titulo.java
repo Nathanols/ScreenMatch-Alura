@@ -2,7 +2,7 @@ package screenmatch.modelos;
 
 import java.util.Scanner;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
 
     Scanner ler = new Scanner(System.in);
 
@@ -103,8 +103,12 @@ public class Titulo {
                 media = somaDasAvaliacoes / totalDeAvaliacoes;
             }
         }
-        System.out.println("Nota media: " + media);
-        return 0;
+        return  (int)media;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
 
