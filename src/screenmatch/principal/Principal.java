@@ -11,8 +11,10 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
+        //Instanciando um objeto
         Movie filme1 = new Movie("Gigantes de Aço",2014);
 
+        //atribuindo os valores nos objetos
         //filme1.setNome("Gigantes de Aço");
         filme1.setIncluidoNoPlano(true);
         filme1.setDuracaoEmMinutos(180);

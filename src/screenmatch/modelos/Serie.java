@@ -1,5 +1,7 @@
 package screenmatch.modelos;
 
+//criacao da classe Serie que estende todos os
+//atributos e metodos da classe mae Titulo
 public class Serie extends Titulo{
 
     private int temporadas;
@@ -7,10 +9,12 @@ public class Serie extends Titulo{
     private boolean ativa;
     private int minPorEpisodio;
 
+    //Criando um metodo contrutor de uma serie
     public Serie(String nome, int anoDeLancamento) {
         super(nome, anoDeLancamento);
     }
 
+    //criando os metodos getters e setters
     public int getTemporadas() {
         return temporadas;
     }
@@ -43,6 +47,12 @@ public class Serie extends Titulo{
         this.minPorEpisodio = minPorEpisodio;
     }
 
+    //sobrescrevendo metodos ja criados em outras classes
+    //para se "comprtarem de outra maneira"
+    /**
+     * Calcula o tempo Total de uma serie em minutos
+     * @return
+     */
     @Override
     public int getDuracaoEmMinutos() {
         return temporadas * epPorTemporada * minPorEpisodio;

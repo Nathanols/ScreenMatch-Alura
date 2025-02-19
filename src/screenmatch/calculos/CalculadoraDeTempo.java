@@ -17,6 +17,11 @@ public class CalculadoraDeTempo {
     //    tempoTotal += s.getDuracaoEmMinutos();
     //}
 
+    /**
+     * Soma os tempos das series e titulos para informar
+     * quanto tempo será necessario para assistir todos
+     * @param
+     */
     public void inclui (Titulo t){
         tempoTotal+= t.getDuracaoEmMinutos();
     }

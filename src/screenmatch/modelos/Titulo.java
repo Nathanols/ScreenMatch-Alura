@@ -2,6 +2,10 @@ package screenmatch.modelos;
 
 import java.util.Scanner;
 
+//SuperClasse que compartilha todos os seus metodos
+//e atributos com as suas SubClasses Movie e Serie
+
+//Implementa o Comparable<>
 public class Titulo implements Comparable<Titulo> {
 
     Scanner ler = new Scanner(System.in);
@@ -15,12 +19,14 @@ public class Titulo implements Comparable<Titulo> {
     private double media = 0;
     private int duracaoEmMinutos;
 
+    //Criando metodo construtor de Titulo
     public Titulo(String nome, int anoDeLancamento) {
         this.setNome(nome);
         this.setAnoDeLancamento(anoDeLancamento);
 
     }
 
+    //Criando getters e setters
     public boolean isIncluidoNoPlano() {
         return incluidoNoPlano;
     }
@@ -85,6 +91,11 @@ public class Titulo implements Comparable<Titulo> {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
+    //criando metodos que poderão ser usados pelas subclasses
+
+    /**
+     * Exibe uma previa com informações do filme ou serie
+     */
     public void exibirFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Incluido no plano? " + incluidoNoPlano);
@@ -92,6 +103,10 @@ public class Titulo implements Comparable<Titulo> {
         System.out.println("Ano de lançamento " + anoDeLancamento);
     }
 
+    /**
+     * Calcula a media de avaliação dos filmes e series
+     * @return
+     */
     public int mediaAvaliacao() {
         while (avaliacao != -1) {
             System.out.println("Digite a avaliacao ou -1 para sair: ");
@@ -106,6 +121,8 @@ public class Titulo implements Comparable<Titulo> {
         return  (int)media;
     }
 
+    //Sobrescrita do metodo compareTo que pertence
+    //ao Comparable<> que foi implementado pela classe
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());

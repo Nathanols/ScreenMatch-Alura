@@ -6,6 +6,7 @@ import screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Listas {
     public static void main(String[] args) {
@@ -17,8 +18,10 @@ public class Listas {
         filme3.setAvaliacao(10);
         Serie serie1 = new Serie("Naruto", 2005);
 
+        //criando listas de filmes e usando
+        // lguns metodos ja existentes no Java
         ArrayList<Titulo> novaLista = new ArrayList<>();
-
+        //adicionando objeto na lista
         novaLista.add(filme1);
         novaLista.add(filme2);
         novaLista.add(filme3);
@@ -39,9 +42,18 @@ public class Listas {
         Collections.sort(buscaPorArtista);
         System.out.println("Depois da ordenaçõ: " + buscaPorArtista);
         System.out.println();
+
+        //ordenando a lista por ordem alfabetica usando a
+        //biblioteca Collections com o metodo sort()
         System.out.println(novaLista);
         Collections.sort(novaLista);
         System.out.println("Lista de titulos ordenados: "+ novaLista);
+        System.out.println();
+
+        //Ordenando lista pelo ano de
+        // lancamento com o metodo Comparator
+        novaLista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano: "+ novaLista);
     }
 }
 
